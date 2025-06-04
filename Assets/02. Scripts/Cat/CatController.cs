@@ -3,12 +3,15 @@ using UnityEngine;
 public class CatController : MonoBehaviour
 {
     Rigidbody2D catRb;
+    public SoundManager soundManager;
     public float jumpPower = 10f;
     bool isGround = false;
     int jumpCount = 0;
+    Animator animator;
     void Start()
     {
         catRb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -20,6 +23,8 @@ public class CatController : MonoBehaviour
             {
                 catRb.AddForceY(jumpPower, ForceMode2D.Impulse);
                 jumpCount++;
+                animator.SetTrigger("Jump");
+                soundManager.OnJumpSound();
             }
         }
     }
@@ -29,6 +34,7 @@ public class CatController : MonoBehaviour
         {
             isGround = true;
             jumpCount = 0;
+            animator.SetTrigger("Ground");
         }
         
     }

@@ -10,10 +10,17 @@ public class DoorEvent : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        animator.SetTrigger("Open");
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            animator.SetTrigger("Open");
+        }
     }
     void OnCollisionExit(Collision collision)
     {
-        animator.SetTrigger("Close");
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            animator.SetTrigger("Close");
+        }
+        
     }
 }
