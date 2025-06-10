@@ -19,19 +19,14 @@ using UnityEngine.UI;
 
     public void OnStartButton()
     {
-        if (inputField.text == "")
-        {
-            return;
-        }
-        else
-        {
+        
             catNameText.text = inputField.text;
             playObj.SetActive(true);
             introUI.SetActive(false);
 
             Debug.Log($"{catNameText.text} 입력");
             catNameText.text = inputField.text;
-        }
+        
 
     }
     }
