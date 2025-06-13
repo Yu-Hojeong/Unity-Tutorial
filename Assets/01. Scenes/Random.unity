@@ -119,6 +119,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &270790524
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 270790526}
+  - component: {fileID: 270790525}
+  m_Layer: 0
+  m_Name: Casting
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &270790525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270790524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bddbadcde18322945b920ac8492680f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &270790526
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270790524}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &801587363
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,7 +179,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &801587364
 Transform:
   m_ObjectHideFlags: 0
@@ -163,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0f4f5aa5cb52c14cb3863f5441ca8b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intArray: 0100000002000000030000000400000005000000060000000700000008000000090000000a000000
+  intList: 
 --- !u!1 &1270439873
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,3 +428,4 @@ SceneRoots:
   - {fileID: 1873778371}
   - {fileID: 1270439875}
   - {fileID: 801587364}
+  - {fileID: 270790526}
