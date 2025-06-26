@@ -1,21 +1,27 @@
+using System.Collections;
 using UnityEngine;
 
 public abstract class Monster : MonoBehaviour
 {
-    public SpriteRenderer spriteRenderer;
+    SpriteRenderer spriteRenderer;
     protected float hp = 3f;
     protected float moveSpeed = 3f;
     int dir = 1;
     public abstract void Init();
+    public MonsterSpawner monsterSpawner;
+
+    Animator animator;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+        monsterSpawner = FindFirstObjectByType<MonsterSpawner>();
         Init();
     }
     void OnMouseDown()
     {
-        Hit(1);
+        StartCoroutine(Hit(1));
     }
 
     private void Update()
@@ -37,13 +43,18 @@ public abstract class Monster : MonoBehaviour
             spriteRenderer.flipX = false;
         }
     }
-    void Hit(float damage)
+    public IEnumerator Hit(float damage)
     {
         hp -= damage;
-        if (hp<=0)
+        animator.SetTrigger("Hit");
+
+        if (hp <= 0)
         {
             Destroy(gameObject);
+            monsterSpawner.DropCoin(transform.position);
+
         }
+        yield return new WaitForSeconds(0.5f);
     }
 }
 

@@ -1,31 +1,45 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
     public class UIManager : MonoBehaviour
     {
+    public ScoreManager scoreManager;
         public GameObject playObj;
         public GameObject introUI;
         public TMP_InputField inputField;
         public TextMeshProUGUI catNameText;
         public Button startButton;
+        public Button restartButton;
+    
 
     void Start()
     {
 
         startButton.onClick.AddListener(OnStartButton);
+        restartButton.onClick.AddListener(OnRestartButton);
     }
 
     public void OnStartButton()
     {
-        
-            catNameText.text = inputField.text;
-            playObj.SetActive(true);
-            introUI.SetActive(false);
 
-            Debug.Log($"{catNameText.text} 입력");
-            catNameText.text = inputField.text;
+        catNameText.text = inputField.text;
+        playObj.SetActive(true);
+        introUI.SetActive(false);
+
+        Debug.Log($"{catNameText.text} 입력");
+        catNameText.text = inputField.text;
+        scoreManager.isGameStart = true;
+        
+
+    }
+    public void OnRestartButton()
+    {
+        
+            string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
         
 
     }

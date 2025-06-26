@@ -5,9 +5,12 @@ using UnityEngine.Rendering;
 // {
     public class SoundManager : MonoBehaviour
     {
+        
         public AudioSource audioSource;
         public AudioClip bgmClip;
         public AudioClip jumpClip;
+
+    
 
         void Start()
         {

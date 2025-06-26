@@ -9,15 +9,16 @@ TagManager:
   - S20
   - S30
   - GameOver
+  - Monster
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
+  - Monster
+  - Coin
   - 
   - 
   - 
