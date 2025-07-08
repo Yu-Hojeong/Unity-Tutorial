@@ -10,6 +10,8 @@ TagManager:
   - S30
   - GameOver
   - Monster
+  - Ladder
+  - Return
   layers:
   - Default
   - TransparentFX

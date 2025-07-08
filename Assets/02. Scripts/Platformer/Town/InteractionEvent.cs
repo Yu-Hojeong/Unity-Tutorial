@@ -7,6 +7,7 @@ public class InteractionEvent : MonoBehaviour
     public InteractionType type;
     public GameObject signPopUp;
     public FadeRoutine fadeRoutine;
+    public SoundController soundController;
 
     public GameObject map;
     public GameObject house;
@@ -51,6 +52,7 @@ public class InteractionEvent : MonoBehaviour
 
     IEnumerator DoorRoutine(Transform Player)
     {
+        soundController.EventSound("OpenDoor");
         yield return StartCoroutine(fadeRoutine.Fade(1f, Color.black, true));
         
             
